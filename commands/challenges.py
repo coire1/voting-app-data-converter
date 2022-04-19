@@ -15,7 +15,7 @@ def convert(
 
     tags_to_strip = ['a', 'b', 'img', 'strong', 'u', 'i', 'embed', 'iframe']
 
-    with open(input_file) as file:
+    with open(input_file, encoding="utf-8") as file:
         challenges = json.load(file)
 
     md_challenges = []
@@ -23,5 +23,5 @@ def convert(
         challenge['description'] = md(challenge['description'], strip=tags_to_strip)
         md_challenges.append(challenge)
 
-    with open(output_file, 'w') as file:
+    with open(output_file, 'w', encoding="utf-8") as file:
         file.write(json.dumps(md_challenges, indent=2))

@@ -15,7 +15,7 @@ def convert(
 
     tags_to_strip = ['a', 'b', 'img', 'strong', 'u', 'i', 'embed', 'iframe']
 
-    with open(input_file) as file:
+    with open(input_file, encoding="utf-8") as file:
         proposals = json.load(file)
 
     md_proposals = []
@@ -26,5 +26,5 @@ def convert(
         proposal['proposer_relevant_experience'] = md(proposal['proposer_relevant_experience'], strip=tags_to_strip)
         md_proposals.append(proposal)
 
-    with open(output_file, 'w') as file:
+    with open(output_file, 'w', encoding="utf-8") as file:
         file.write(json.dumps(md_proposals, indent=2))
