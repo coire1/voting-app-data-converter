@@ -24,6 +24,10 @@ def convert(
         proposal['proposal_solution'] = md(proposal['proposal_solution'], strip=tags_to_strip)
         proposal['proposal_summary'] = md(proposal['proposal_summary'], strip=tags_to_strip)
         proposal['proposer_relevant_experience'] = md(proposal['proposer_relevant_experience'], strip=tags_to_strip)
+        proposal['proposal_brief'] = md(proposal['proposal_brief'], strip=tags_to_strip)
+        proposal['proposal_importance'] = md(proposal['proposal_importance'], strip=tags_to_strip)
+        proposal['proposal_metrics'] = md(proposal['proposal_metrics'], strip=tags_to_strip)
+        proposal['proposal_goal'] = md(proposal['proposal_goal'], strip=tags_to_strip)
         md_proposals.append(proposal)
 
     with open(output_file, 'w', encoding="utf-8") as file:
